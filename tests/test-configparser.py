@@ -13,7 +13,7 @@ ini_filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'sample
 class test_configparser(unittest.TestCase):
 
     def test_configparser(self):
-        x = RawConfigParser()
+        x = ConfigParser()
         x.read(ini_filename)
         path = x.get('general', 'path')
         assert path == 'feature%2Fcool'
@@ -25,7 +25,7 @@ class test_configparser(unittest.TestCase):
         assert path == 'feature%2Fcool'
 
     def test_safeconfigparser(self):
-        x = RawConfigParser()
+        x = SafeConfigParser()
         x.read(ini_filename)
         path = x.get('general', 'path')
         assert path == 'feature%2Fcool'
